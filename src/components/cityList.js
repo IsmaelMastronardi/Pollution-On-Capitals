@@ -1,19 +1,23 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { SingleCity } from './singleCity';
 import { fetchPolution } from '../redux/cities/citiesSlice';
+import SingleCity from './singleCity';
 
 // eslint-disable-next-line import/prefer-default-export
 export const CityList = () => {
-  const { cities } = useSelector((store) => (store.citiesStore));
+  const { cities, isLoading } = useSelector((store) => (store.citiesStore));
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchPolution(cities[0]));
-  });
-
+    cities.map((city) => dispatch(fetchPolution(city)));
+  }, []);
+  if (isLoading === 'false') {
+    return (
+      <>
+        {cities.map((city) => <SingleCity key={city.name} obj={city} />)}
+      </>
+    );
+  }
   return (
-    <>
-      {cities.map((city) => <SingleCity key={city.name} name={city.name} />)}
-    </>
+    <p>Loading...</p>
   );
 };

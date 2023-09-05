@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice, current } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 const apiKey = '69f4010305ecd6da39559d7f47a939ed';
 
@@ -37,12 +37,15 @@ const citiesSlice = createSlice({
     });
     builder.addCase(fetchPolution.fulfilled, (state, action) => {
       // console.log(action.payload[1].list);
-      state.isLoading = 'false';
       const targetCity = state.cities.find((el) => el.name === action.payload[0]);
       // eslint-disable-next-line prefer-destructuring
       targetCity.data = action.payload[1].list[0];
-      console.log(current(targetCity));
+      const allLoaded = state.cities.every((obj) => 'data' in obj);
+      if (allLoaded === true) {
+        state.isLoading = 'false';
+      }
     });
   },
 });
+
 export default citiesSlice.reducer;

@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchPolution } from '../redux/cities/citiesSlice';
 import DropdownMenu from './dropdownMenu';
-import CitiesList from './citiesList';
+import { CityList } from './citiesList';
 
 // eslint-disable-next-line import/prefer-default-export
 // export const CityList = () => {
@@ -28,12 +28,13 @@ const PollutionApp = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     cities.map((city) => dispatch(fetchPolution(city)));
+    console.log(cities);
   }, []);
 
   return (
     <>
       <DropdownMenu />
-      <CitiesList />
+      <CityList />
     </>
   );
   // if (isLoading === 'false') {

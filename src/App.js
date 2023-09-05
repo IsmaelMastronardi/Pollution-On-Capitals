@@ -1,9 +1,9 @@
 import './App.css';
-import { CityList } from './components/cityList';
+import PollutionApp from './components/pollutionApp';
 
 function App() {
   return (
-    <CityList />
+    <PollutionApp />
   );
 }
 

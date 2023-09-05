@@ -23,12 +23,17 @@ const initialState = {
     { name: 'Cairo', lat: 30.0443879, lon: 31.2357257 },
   ],
   isLoading: 'true',
+  filter: 'all',
 };
 
 const citiesSlice = createSlice({
   name: 'cities array',
   initialState,
   reducers: {
+    choseFilter: (state, action) => {
+      state.filter = action.payload;
+      console.log(state.filter);
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(fetchPolution.pending, (state) => {
@@ -48,4 +53,5 @@ const citiesSlice = createSlice({
   },
 });
 
+export const { choseFilter } = citiesSlice.actions;
 export default citiesSlice.reducer;

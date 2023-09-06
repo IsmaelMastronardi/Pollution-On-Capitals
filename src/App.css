@@ -1,3 +1,13 @@
 body {
   margin: 0;
 }
+
+.arrowBtn {
+  background-color: white;
+  border: none;
+}
+
+.arrow {
+  padding-top: 0.2rem;
+  width: 0.7rem;
+}

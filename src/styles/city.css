@@ -14,15 +14,11 @@
 }
 
 .city-div {
-  background-color: rgb(255, 72, 200);
+  background-color: rgba(217, 68, 128, 255);
 }
 
 .city-div-ligth {
-  background-color: rgb(255, 113, 212);
-}
-
-.city-link {
-  
+  background-color: rgba(207, 66, 120, 255);
 }
 
 .single-city-title-div {

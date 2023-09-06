@@ -5,11 +5,27 @@ body {
 }
 
 .arrowBtn {
-  background-color: white;
+  background-color: rgba(217, 68, 128, 255);
   border: none;
+  padding-left: 1rem;
 }
 
-.arrow {
-  padding-top: 0.2rem;
-  width: 0.7rem;
+.navbar {
+  background-color: rgba(217, 68, 128, 255);
+}
+
+.navbar-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-p {
+  color: white;
+}
+
+.navbar-icons {
+  display: flex;
+  gap: 1rem;
+  padding-right: 1rem;
 }

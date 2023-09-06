@@ -75,15 +75,12 @@
 .city-item-rigth {
   display: flex;
   padding-right: 1rem;
+  align-items: center;
 }
 
 .component-value {
   color: white;
   padding-right: 1rem;
-}
-
-.rigth-arrow {
-  width: 1.3rem;
 }
 
 .breakdown-p {

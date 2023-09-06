@@ -1,9 +1,9 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
-// import PropTypes from 'prop-types';
+/* eslint-disable import/no-extraneous-dependencies */
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleRight } from '@fortawesome/free-solid-svg-icons';
 import cityIcon from '../assets/icons/city-solid.svg';
-import rigthArrow from '../assets/icons/circle-right-regular.svg';
 import '../styles/title.css';
 import '../styles/city.css';
 
@@ -48,7 +48,7 @@ const SingleCity = () => {
                 <p className="component-name">{el.key.toUpperCase()}</p>
                 <div className="city-item-rigth">
                   <p className="component-value">{el.val}</p>
-                  <img src={rigthArrow} alt="" className="rigth-arrow" />
+                  <FontAwesomeIcon icon={faCircleRight} style={{ color: '#f8f9fc' }} />
                 </div>
               </li>
             ))}

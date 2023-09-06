@@ -1,22 +1,40 @@
-import { Link, Route, Routes } from 'react-router-dom';
+/* eslint-disable import/no-extraneous-dependencies */
+import {
+  Link,
+  Route,
+  Routes,
+  useLocation,
+} from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft, faMicrophone, faGear } from '@fortawesome/free-solid-svg-icons';
 import './App.css';
 import PollutionApp from './components/pollutionApp';
 import SingleCity from './components/singleCity';
-import arrow from './assets/icons/chevron-left-solid.svg';
 
 function App() {
+  const routeLoc = useLocation();
+  console.log(routeLoc);
   return (
-    <>
-      <Link to="/">
-        <button type="button" className="arrowBtn">
-          <img src={arrow} alt=" go back" className="arrow" />
-        </button>
-      </Link>
+    <nav className="navbar">
+      <div className="navbar-div">
+        <Link to="/">
+          <button type="button" className="arrowBtn">
+            <FontAwesomeIcon icon={faChevronLeft} style={{ color: '#ffffff' }} />
+          </button>
+        </Link>
+        <p className="navbar-p">
+          {routeLoc.pathname === '/' ? 'all view' : 'city view'}
+        </p>
+        <div className="navbar-icons">
+          <FontAwesomeIcon icon={faMicrophone} style={{ color: '#ffffff' }} />
+          <FontAwesomeIcon icon={faGear} style={{ color: '#ffffff' }} />
+        </div>
+      </div>
       <Routes>
         <Route path="/" element={<PollutionApp />} />
         <Route path="/:name" element={<SingleCity />} />
       </Routes>
-    </>
+    </nav>
   );
 }
 

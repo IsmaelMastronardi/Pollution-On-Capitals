@@ -4,6 +4,7 @@ import { fetchPolution } from '../redux/cities/citiesSlice';
 import DropdownMenu from './dropdownMenu';
 import { CityList } from './citiesList';
 import '../styles/city.css';
+import AppTitle from './title';
 
 // eslint-disable-next-line import/prefer-default-export
 // export const CityList = () => {
@@ -35,6 +36,7 @@ const PollutionApp = () => {
   return (
     <>
       <DropdownMenu />
+      <AppTitle />
       <CityList />
     </>
   );

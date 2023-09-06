@@ -1,15 +1,24 @@
 .city-section {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
 }
 
+.city-div-ligth,
 .city-div {
-  border: 1px solid;
   width: 50%;
-  height: 140px;
+  height: 0;
+  padding-bottom: 50%;
   text-align: center;
+}
+
+.city-div {
+  background-color: rgb(255, 72, 200);
+}
+
+.city-div-ligth {
+  background-color: rgb(255, 113, 212);
 }
 
 .city-link {

@@ -27,18 +27,35 @@ export const CityList = () => {
   const { cities, isLoading, filter } = useSelector((store) => (store.citiesStore));
   if (isLoading === 'false') {
     if (filter === 'all') {
+      // return (
+      //   <section className="city-section">
+      //     {cities.map((city, index) => (
+      //       <div key={city.name} className={index % 2 === 0 ? 'city-div' : 'city-div-ligth'}>
+      //         <Link to={`/${city.name}`} key={city.name} className="city-link">
+      //           {city.name}
+      //         </Link>
+      //         <p>
+      //           AQI:
+      //           {city.data.main.aqi}
+      //         </p>
+      //       </div>
+      //     ))}
+      //   </section>
+      // );
       return (
         <section className="city-section">
-          {cities.map((city) => (
-            <div key={city.name} className="city-div">
-              <Link to={`/${city.name}`} key={city.name} className="city-link">
-                {city.name}
-              </Link>
-              <p>
-                AQI:
-                {city.data.main.aqi}
-              </p>
-            </div>
+          {cities.map((city, index) => (
+            <Link to={`/${city.name}`} key={city.name} className={index % 2 === 0 ? 'city-div' : 'city-div-ligth'}>
+              <div key={city.name}>
+                <p>
+                  {city.name}
+                </p>
+                <p>
+                  AQI:
+                  {city.data.main.aqi}
+                </p>
+              </div>
+            </Link>
           ))}
         </section>
       );

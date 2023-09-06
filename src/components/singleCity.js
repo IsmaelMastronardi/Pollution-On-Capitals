@@ -16,15 +16,29 @@ const SingleCity = () => {
   const { name } = useParams();
   const { cities } = useSelector((store) => (store.citiesStore));
   const singleCity = cities.find((city) => city.name === name);
-  console.log(singleCity);
+  const keys = Object.keys(singleCity.data.components);
+  const compArr = [];
+  keys.forEach((key) => {
+    compArr.push(`${key}: ${singleCity.data.components[key]}`);
+  });
   return (
-    <>
-      <p>
-        city :
-        {' '}
-        {singleCity.name}
-      </p>
-    </>
+    <article>
+      <div className="single-city-title-div">
+        <p>
+          city:
+          {' '}
+          {singleCity.name}
+        </p>
+      </div>
+      <div>
+        <p>Polution Breackdown</p>
+      </div>
+      <div>
+        <ul>
+          {compArr.map((el) => <p key={el}>{el}</p>)}
+        </ul>
+      </div>
+    </article>
   );
 };
 

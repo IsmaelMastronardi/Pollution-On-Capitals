@@ -28,9 +28,19 @@ export const CityList = () => {
   if (isLoading === 'false') {
     if (filter === 'all') {
       return (
-        <div>
-          {cities.map((city) => <Link to={`/${city.name}`} key={city.name}>{city.name}</Link>)}
-        </div>
+        <section className="city-section">
+          {cities.map((city) => (
+            <div key={city.name} className="city-div">
+              <Link to={`/${city.name}`} key={city.name} className="city-link">
+                {city.name}
+              </Link>
+              <p>
+                AQI:
+                {city.data.main.aqi}
+              </p>
+            </div>
+          ))}
+        </section>
       );
     }
     const filteredArr = cities.filter((el) => el.data.main.aqi === Number(filter));

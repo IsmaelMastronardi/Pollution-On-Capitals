@@ -1,0 +1,22 @@
+.city-section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.city-div {
+  border: 1px solid;
+  width: 50%;
+  height: 140px;
+  text-align: center;
+}
+
+.city-link {
+  
+}
+
+.single-city-title-div {
+  border: 1px solid;
+  height: 7rem;
+}

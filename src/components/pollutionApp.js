@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { fetchPolution } from '../redux/cities/citiesSlice';
 import DropdownMenu from './dropdownMenu';
 import { CityList } from './citiesList';
+import '../styles/city.css';
 
 // eslint-disable-next-line import/prefer-default-export
 // export const CityList = () => {

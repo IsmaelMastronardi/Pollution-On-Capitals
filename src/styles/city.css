@@ -1,12 +1,12 @@
 .city-section {
   display: flex;
-  flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.city-icon {
+.city-logo {
   width: 6rem;
+  height: 6rem;
   padding-top: 1rem;
 }
 

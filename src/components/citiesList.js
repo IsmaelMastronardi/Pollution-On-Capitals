@@ -1,6 +1,8 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import cityIcon from '../assets/icons/city-solid.svg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCity } from '@fortawesome/free-solid-svg-icons';
 
 export const CityList = () => {
   const { cities, isLoading, filter } = useSelector((store) => (store.citiesStore));
@@ -10,7 +12,7 @@ export const CityList = () => {
         <section className="city-section">
           {cities.map((city, index) => (
             <Link to={`/${city.name}`} key={city.name} className={index % 2 === 0 ? 'city-div city-div-dark' : 'city-div city-div-ligth'}>
-              <img src={cityIcon} alt="" className="city-icon" />
+              <FontAwesomeIcon icon={faCity} size="2x1" style={{ color: '#b13968' }} className="city-logo" />
               <div key={city.name} className="city-text">
                 <p className="city-name">
                   {city.name.toUpperCase()}

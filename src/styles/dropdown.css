@@ -1,0 +1,10 @@
+.dropdown-menu {
+  width: 100%;
+  background-color: rgba(217, 68, 128, 255);
+  border: 1px solid;
+  outline: none;
+}
+
+option {
+  background-color: rgba(207, 66, 120, 255);
+}

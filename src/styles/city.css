@@ -5,6 +5,11 @@
   justify-content: center;
 }
 
+.city-icon {
+  width: 6rem;
+  padding-top: 1rem;
+}
+
 .city-div-ligth,
 .city-div {
   width: 50%;
@@ -13,15 +18,76 @@
   text-align: center;
 }
 
-.city-div {
+.city-div-dark {
   background-color: rgba(217, 68, 128, 255);
 }
 
+.item-ligth,
 .city-div-ligth {
   background-color: rgba(207, 66, 120, 255);
+}
+
+.city-div:active,
+.city-div:visited,
+.city-div:hover,
+.city-div:link {
+  color: white;
+  text-decoration: none;
 }
 
 .single-city-title-div {
   border: 1px solid;
   height: 7rem;
+}
+
+.city-text {
+  padding-top: 1rem;
+  padding-right: 1rem;
+  display: flex;
+  flex-direction: column;
+  text-align: end;
+}
+
+.city-name {
+  margin: 0;
+}
+
+/* single city section */
+
+.components-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.component-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.component-name {
+  color: white;
+  padding-left: 1rem;
+}
+
+.city-item-rigth {
+  display: flex;
+  padding-right: 1rem;
+}
+
+.component-value {
+  color: white;
+  padding-right: 1rem;
+}
+
+.rigth-arrow {
+  width: 1.3rem;
+}
+
+.breakdown-p {
+  margin: 0;
+  width: 100%;
+  background-color: red;
 }

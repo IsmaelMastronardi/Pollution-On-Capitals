@@ -13,7 +13,6 @@ import SingleCity from './components/singleCity';
 
 function App() {
   const routeLoc = useLocation();
-  console.log(routeLoc);
   return (
     <nav className="navbar">
       <div className="navbar-div">

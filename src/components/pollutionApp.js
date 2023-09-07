@@ -30,7 +30,6 @@ const PollutionApp = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     cities.map((city) => dispatch(fetchPolution(city)));
-    console.log(cities);
   }, []);
 
   return (

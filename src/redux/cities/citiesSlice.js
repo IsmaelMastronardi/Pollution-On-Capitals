@@ -14,6 +14,14 @@ export const fetchPolution = createAsyncThunk(
   },
 );
 
+export const saveToLocalStorage = createAsyncThunk(
+  'localStorage',
+  async (obj) => {
+    const saveState = JSON.stringify(obj);
+    localStorage.setItem('savedCity', saveState);
+  },
+);
+
 const initialState = {
   cities: [
     { name: 'Buenos Aires', lat: -34.6075682, lon: -58.4370894 },
@@ -32,16 +40,13 @@ const citiesSlice = createSlice({
   reducers: {
     choseFilter: (state, action) => {
       state.filter = action.payload;
-      console.log(state.filter);
     },
   },
   extraReducers: (builder) => {
     builder.addCase(fetchPolution.pending, (state) => {
-      console.log('pending');
       state.isLoading = 'true';
     });
     builder.addCase(fetchPolution.fulfilled, (state, action) => {
-      // console.log(action.payload[1].list);
       const targetCity = state.cities.find((el) => el.name === action.payload[0]);
       // eslint-disable-next-line prefer-destructuring
       targetCity.data = action.payload[1].list[0];
@@ -49,6 +54,11 @@ const citiesSlice = createSlice({
       if (allLoaded === true) {
         state.isLoading = 'false';
       }
+      const arrToSave = JSON.parse(localStorage.getItem('savedCities')) || [];
+      if (!arrToSave.some((city) => city.name === targetCity.name)) {
+        arrToSave.push(targetCity);
+      }
+      localStorage.setItem('savedCities', JSON.stringify(arrToSave));
     });
   },
 });

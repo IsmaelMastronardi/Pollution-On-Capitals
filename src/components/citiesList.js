@@ -4,8 +4,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCity } from '@fortawesome/free-solid-svg-icons';
 
 export const CityList = () => {
-  const { cities, isLoading, filter } = useSelector((store) => (store.citiesStore));
-  if (isLoading === 'false') {
+  const {
+    cities,
+    isLoading,
+    filter,
+    hasError,
+    errorMesage,
+  } = useSelector((store) => (store.citiesStore));
+  if (isLoading === false && hasError === false) {
     let filteredArr = cities;
     if (filter !== 'all') {
       filteredArr = cities.filter((el) => el.data.main.aqi === Number(filter));
@@ -16,7 +22,7 @@ export const CityList = () => {
           <Link
             to={`/${city.name}`}
             key={city.name}
-            className={(index) % 2 === 0 ? 'city-div city-div-dark' : 'city-div city-div-ligth'}
+            className={(index) % 2 === 0 ? 'city-div pink3' : 'city-div pink4'}
           >
             <FontAwesomeIcon icon={faCity} style={{ color: '#b13968' }} className="city-logo" />
             <div key={city.name} className="city-text">
@@ -33,10 +39,15 @@ export const CityList = () => {
       </section>
     );
   }
+  if (hasError === true) {
+    return (
+      <p>{errorMesage}</p>
+    );
+  }
   return (
-    <p>Loading...</p>
+    <div className="loading pink1">
+      <p className="loadingText">Loading...</p>
+    </div>
   );
 };
 export default CityList;
-
-// className={(index) % 2 === 0 ? 'city-div city-div-dark' : 'city-div city-div-ligth'}

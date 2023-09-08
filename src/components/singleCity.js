@@ -15,7 +15,7 @@ const SingleCity = () => {
   useEffect(() => {
     cities.map((city) => dispatch(fetchPolution(city)));
   }, []);
-  if (isLoading === 'false') {
+  if (isLoading === false) {
     const singleCity = cities.find((city) => city.name === name);
     const compArr = [];
     const keys = Object.keys(singleCity.data.components);
@@ -49,7 +49,7 @@ const SingleCity = () => {
           <section>
             <ul className="components-list">
               {compArr.map((el, index) => (
-                <li key={el.key} className={index % 2 === 0 ? 'component-item city-div-dark' : 'component-item item-ligth'}>
+                <li key={el.key} className={index % 2 === 0 ? 'component-item pink3' : 'component-item pink4'}>
                   <p className="component-name">{el.key.toUpperCase()}</p>
                   <div className="city-item-rigth">
                     <p className="component-value">{el.val}</p>

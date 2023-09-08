@@ -5,12 +5,16 @@ const apiKey = '69f4010305ecd6da39559d7f47a939ed';
 export const fetchPolution = createAsyncThunk(
   'polution',
   async (obj) => {
-    const response = await fetch(`http://api.openweathermap.org/data/2.5/air_pollution?lat=${obj.lat}&lon=${obj.lon}&appid=${apiKey}`);
-    const result = await response.json();
-    const { name } = obj;
-    return (
-      [name, result]
-    );
+    try {
+      const response = await fetch(`http://api.openweathermap.org/data/2.5/air_pollution?lat=${obj.lat}&lon=${obj.lon}&appid=${apiKey}`);
+      const result = await response.json();
+      const { name } = obj;
+      return (
+        [name, result]
+      );
+    } catch (error) {
+      throw Error(error);
+    }
   },
 );
 
@@ -35,8 +39,10 @@ const initialState = {
     { name: 'La Paz', lat: -16.4955455, lon: -68.1336229 },
     { name: 'Nairobi', lat: -1.30326415, lon: -36.826384099341595 },
   ],
-  isLoading: 'true',
+  isLoading: true,
   filter: 'all',
+  hasError: false,
+  errorMesage: '',
 };
 
 const citiesSlice = createSlice({
@@ -49,7 +55,7 @@ const citiesSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(fetchPolution.pending, (state) => {
-      state.isLoading = 'true';
+      state.isLoading = true;
     });
     builder.addCase(fetchPolution.fulfilled, (state, action) => {
       const targetCity = state.cities.find((el) => el.name === action.payload[0]);
@@ -57,8 +63,12 @@ const citiesSlice = createSlice({
       targetCity.data = data;
       const allLoaded = state.cities.every((obj) => 'data' in obj);
       if (allLoaded === true) {
-        state.isLoading = 'false';
+        state.isLoading = false;
       }
+    });
+    builder.addCase(fetchPolution.rejected, (state, action) => {
+      state.hasError = true;
+      state.errorMesage = action.error.message;
     });
   },
 });

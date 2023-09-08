@@ -48,8 +48,8 @@ const citiesSlice = createSlice({
     });
     builder.addCase(fetchPolution.fulfilled, (state, action) => {
       const targetCity = state.cities.find((el) => el.name === action.payload[0]);
-      // eslint-disable-next-line prefer-destructuring
-      targetCity.data = action.payload[1].list[0];
+      const data = action.payload[1].list[0];
+      targetCity.data = data;
       const allLoaded = state.cities.every((obj) => 'data' in obj);
       if (allLoaded === true) {
         state.isLoading = 'false';

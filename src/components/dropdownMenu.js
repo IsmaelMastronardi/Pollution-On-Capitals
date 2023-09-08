@@ -1,6 +1,4 @@
-/* eslint-disable no-unused-vars */
-import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { choseFilter } from '../redux/cities/citiesSlice';
 import '../styles/dropdown.css';
 

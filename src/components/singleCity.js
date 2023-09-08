@@ -1,6 +1,3 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable indent */
-/* eslint-disable import/no-extraneous-dependencies */
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -13,7 +10,6 @@ import { fetchPolution } from '../redux/cities/citiesSlice';
 
 const SingleCity = () => {
   const { name } = useParams();
-  // eslint-disable-next-line no-unused-vars
   const { cities, isLoading } = useSelector((store) => (store.citiesStore));
   const dispatch = useDispatch();
   useEffect(() => {
@@ -67,9 +63,9 @@ const SingleCity = () => {
       </>
     );
   }
- return (
-   <p>Loading</p>
- );
+  return (
+    <p>Loading</p>
+  );
 };
 
 export default SingleCity;

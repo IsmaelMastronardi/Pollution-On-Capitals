@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import {
   Link,
   Route,

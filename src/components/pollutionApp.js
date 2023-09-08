@@ -6,25 +6,6 @@ import { CityList } from './citiesList';
 import '../styles/city.css';
 import AppTitle from './title';
 
-// eslint-disable-next-line import/prefer-default-export
-// export const CityList = () => {
-//   const { cities, isLoading } = useSelector((store) => (store.citiesStore));
-//   const dispatch = useDispatch();
-//   useEffect(() => {
-//     cities.map((city) => dispatch(fetchPolution(city)));
-//   }, []);
-//   if (isLoading === 'false') {
-//     return (
-//       <>
-//         {cities.map((city) => <SingleCity key={city.name} obj={city} />)}
-//       </>
-//     );
-//   }
-//   return (
-//     <p>Loading...</p>
-//   );
-// };
-
 const PollutionApp = () => {
   const { cities } = useSelector((store) => (store.citiesStore));
   const dispatch = useDispatch();
@@ -39,16 +20,6 @@ const PollutionApp = () => {
       <CityList />
     </>
   );
-  // if (isLoading === 'false') {
-  //   return (
-  //     <>
-  //       {cities.map((city) => <SingleCity key={city.name} obj={city} />)}
-  //     </>
-  //   );
-  // }
-  // return (
-  //   <p>Loading...</p>
-  // );
 };
 
 export default PollutionApp;

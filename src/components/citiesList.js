@@ -16,7 +16,7 @@ export const CityList = () => {
           <Link
             to={`/${city.name}`}
             key={city.name}
-            className={2 % index === 0 ? 'city-div city-div-dark' : 'city-div city-div-ligth'}
+            className={(index) % 2 === 0 ? 'city-div city-div-dark' : 'city-div city-div-ligth'}
           >
             <FontAwesomeIcon icon={faCity} style={{ color: '#b13968' }} className="city-logo" />
             <div key={city.name} className="city-text">
@@ -38,3 +38,5 @@ export const CityList = () => {
   );
 };
 export default CityList;
+
+// className={(index) % 2 === 0 ? 'city-div city-div-dark' : 'city-div city-div-ligth'}

@@ -13,6 +13,6 @@ describe('test for the title component', () => {
         </BrowserRouter>
       </Provider>,
     );
-    expect(screen.getByText(5)).toBeInTheDocument();
+    expect(screen.getByText(10)).toBeInTheDocument();
   });
 });

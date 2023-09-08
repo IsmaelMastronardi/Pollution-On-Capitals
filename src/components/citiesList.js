@@ -1,7 +1,5 @@
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCity } from '@fortawesome/free-solid-svg-icons';
 
 export const CityList = () => {
   const {
@@ -18,21 +16,23 @@ export const CityList = () => {
     }
     return (
       <section className="city-section">
-        {filteredArr.map((city, index) => (
+        {filteredArr.map((city) => (
           <Link
             to={`/${city.name}`}
             key={city.name}
-            className={(index) % 2 === 0 ? 'city-div pink3' : 'city-div pink4'}
+            className="city-div"
           >
-            <FontAwesomeIcon icon={faCity} style={{ color: '#b13968' }} className="city-logo" />
-            <div key={city.name} className="city-text">
-              <p className="city-name">
-                {city.name.toUpperCase()}
-              </p>
-              <p className="city-name">
-                AQI:
-                {city.data.main.aqi}
-              </p>
+            <div key={city.name} className="city-content">
+              <img src={city.pic} alt={`${city.name}`} className="cityPic" />
+              <div className="position-absolute">
+                <p className="city-name">
+                  {city.name.toUpperCase()}
+                </p>
+                <p className="city-name">
+                  AQI:
+                  {city.data.main.aqi}
+                </p>
+              </div>
             </div>
           </Link>
         ))}

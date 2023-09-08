@@ -59,27 +59,6 @@ describe('test for citySlice reducers', () => {
   });
 });
 
-// describe('test for the extra reducers', () => {
-//   test('fetch a city', () => {
-//     const prevState = {
-//       cities: [],
-//     };
-//     const response = ['Buenos Aires', {
-//       coord: { lon: -58.4371, lat: -34.6076 },
-//       list: [{
-//         components:
-//         {
-//           co: 267.03, nh3: 1.14, no: 0.04, no2: 8.14, o3: 30.04, pm2_5: 1.9, so2: 3.7,
-//         },
-//         dt: 1694146911,
-//         main:
-//         { aqi: 1 },
-//       }],
-//     }];
-//     expect(reducer(prevState, fetchPolution().fullfilled(response))).toEqual([]);
-//   });
-// });
-
 describe('test for extra reducers', () => {
   const prevState = {
     cities: [

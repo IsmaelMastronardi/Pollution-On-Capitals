@@ -16,7 +16,7 @@ export const fetchPolution = createAsyncThunk(
   'polution',
   async (obj) => {
     try {
-      const response = await fetch(`http://api.openweathermap.org/data/2.5/air_pollution?lat=${obj.lat}&lon=${obj.lon}&appid=${apiKey}`);
+      const response = await fetch(`https://api.openweathermap.org/data/2.5/air_pollution?lat=${obj.lat}&lon=${obj.lon}&appid=${apiKey}`);
       const result = await response.json();
       const { name } = obj;
       return (

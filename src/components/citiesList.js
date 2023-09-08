@@ -41,7 +41,9 @@ export const CityList = () => {
   }
   if (hasError === true) {
     return (
-      <p>{errorMesage}</p>
+      <div className="loading pink1">
+        <p className="loadingText">{errorMesage}</p>
+      </div>
     );
   }
   return (

@@ -46,7 +46,7 @@ const SingleCity = () => {
           <p className="subtitle">POLUTION BREACKDOWN</p>
         </div>
         <article>
-          <section>
+          <section className="components-section">
             <ul className="components-list">
               {compArr.map((el, index) => (
                 <li key={el.key} className={index % 2 === 0 ? 'component-item pink3' : 'component-item pink4'}>

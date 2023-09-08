@@ -35,11 +35,17 @@
 }
 
 .city-name {
+  font-size: 3vw;
   margin: 0;
   color: white;
 }
 
 /* single city section */
+
+.components-section {
+  background-color: red;
+  height: 100%;
+}
 
 .components-list {
   list-style: none;

@@ -29,7 +29,7 @@ export const CityList = () => {
                   {city.name.toUpperCase()}
                 </p>
                 <p className="city-name">
-                  AQI:
+                  Air Quality Index:
                   {city.data.main.aqi}
                 </p>
               </div>

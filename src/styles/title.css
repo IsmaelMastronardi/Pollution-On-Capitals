@@ -1,0 +1,37 @@
+.title-section {
+  background-color: rgba(254, 83, 149, 255);
+  height: 7rem;
+  color: white;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  border: none;
+}
+
+.width-50 {
+  width: 50%;
+}
+
+.earth-logo {
+  width: 6rem;
+}
+
+.title-p {
+  margin: 0;
+  text-align: start;
+}
+
+.title-size {
+  font-size: 1.3rem;
+}
+
+.subtitle {
+  margin: 0;
+  padding-top: 0.2rem;
+  padding-bottom: 0.1rem;
+  padding-left: 0.8rem;
+  background-color: rgba(223, 71, 131, 255);
+  color: white;
+  font-size: 0.8rem;
+}

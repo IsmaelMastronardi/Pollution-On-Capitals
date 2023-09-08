@@ -43,8 +43,8 @@
 /* single city section */
 
 .components-section {
-  background-color: red;
   height: 100%;
+  padding-bottom: 100%;
 }
 
 .components-list {

@@ -54,11 +54,6 @@ const citiesSlice = createSlice({
       if (allLoaded === true) {
         state.isLoading = 'false';
       }
-      const arrToSave = JSON.parse(localStorage.getItem('savedCities')) || [];
-      if (!arrToSave.some((city) => city.name === targetCity.name)) {
-        arrToSave.push(targetCity);
-      }
-      localStorage.setItem('savedCities', JSON.stringify(arrToSave));
     });
   },
 });

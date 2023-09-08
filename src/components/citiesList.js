@@ -16,7 +16,7 @@ export const CityList = () => {
               key={city.name}
               className={2 % index === 0 ? 'city-div city-div-dark' : 'city-div city-div-ligth'}
             >
-              <FontAwesomeIcon icon={faCity} size="2x1" style={{ color: '#b13968' }} className="city-logo" />
+              <FontAwesomeIcon icon={faCity} style={{ color: '#b13968' }} className="city-logo" />
               <div key={city.name} className="city-text">
                 <p className="city-name">
                   {city.name.toUpperCase()}
